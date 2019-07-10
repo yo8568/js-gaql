@@ -1,46 +1,54 @@
-# Query Stringify
+# GAQL Builder - javascript version
 
-![build](https://travis-ci.com/yo8568/query-stringify.svg?branch=master)
+![build](https://travis-ci.com/yo8568/js-gaql-builder.svg?branch=master)
 
-A simple tool for combining some query parameters as a entire url string.
+Generating GAQL (Google Ads Query Language) tool, this is ***not official library***.
+If you want to build GAQL string much easier, you can use this tool, but it would not be validated entirely for all of posible combinations.
+
+Please follow the building rule via [official documentation](https://developers.google.com/google-ads/api/docs/query/overview).
 
 ### Installation
 
 ```bash
-$ npm install @yo8568/query-stringify
+$ npm install js-gaql-builder
 ```
 
 ### Usage
 
-***parameters***
+***Syntax***
 
 ```javascript
-  qs({ basePath, query, url, ignore  })
+ const result = new gaql()
+  .select([
+    'ad_group.id', 'ad_group_criterion.type', 'ad_group_criterion.criterion_id',
+    'ad_group_criterion.keyword.text', 'ad_group_criterion.keyword.match_type'])
+  .from('ad_group_criterion')
+  .where('metrics.clicks > 135')
+  .parameters(['include_drafts = true'])
+  .orderBy('ASC')
+  .limit(2)
+  .toString()
 ```
 
-*@param {string} options.basePath - url*
-
-*@param {object} options.query - parameters, eg query = { limit: 20, accounts: ['123', '456'], breakdown: 'country' }*
-
-*@param {string} options.url - next page url [high priority]*
-
-*@param {array} options.ignore - ignore specfic fields*
+***Result***
 
 ```javascript
-import qs from 'query-stringify'
-
-qs({
-    basePath: '/api/test',
-    query: {
-      user: [1234, 3456],
-      business: '3333333',
-      skip: 10,
-      limit: 333
-    },
-    ignore: ['user']
-  })
-
-// output: '/api/test?business=3333333&skip=10&limit=333'
+  SELECT
+    ad_group.id,
+    ad_group_criterion.type,
+    ad_group_criterion.criterion_id,
+    ad_group_criterion.keyword.text,
+    ad_group_criterion.keyword.match_type
+  FROM
+    ad_group_criterion
+  WHERE
+    metrics.clicks > 135
+  ORDER BY
+    ASC
+  LIMIT
+    2
+  PARAMETERS
+    include_drafts = true
 ```
 
 ### Run Test

@@ -1,8 +1,8 @@
 {
-  "name": "@yo8568/query-stringify",
+  "name": "js-gaql-builder",
   "version": "1.0.0",
-  "description": "A query stringify tool",
-  "main": "lib/query-stringify.js",
+  "description": "Generating GAQL (Google Ads Query Language) tool.",
+  "main": "lib/gaql.js",
   "scripts": {
     "test": "jest",
     "cov": "jest --coverage",
@@ -13,20 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yo8568/query-stringify.git"
+    "url": "git+https://github.com/yo8568/js-gaql-builder.git"
   },
   "keywords": [
-    "query",
-    "stringify",
-    "path",
+    "js-gaql",
+    "gaql",
     "builder"
   ],
   "author": "Kenny Chang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yo8568/query-stringify/issues"
+    "url": "https://github.com/yo8568/js-gaql-builder/issues"
   },
-  "homepage": "https://github.com/yo8568/query-stringify#readme",
+  "homepage": "https://github.com/yo8568/js-gaql-builder#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
