@@ -15,10 +15,20 @@ $ npm install js-gaql-builder
 
 ### Usage
 
+***Import library***
+
+```javascript
+// node.js or es5
+const GAQLB = require('js-gaql-builder').default
+
+// react.js or es6
+import GAQLB from 'js-gaql-builder'
+```
+
 ***Syntax***
 
 ```javascript
- const result = new gaql()
+ const result = new GAQLB()
   .select([
     'ad_group.id', 'ad_group_criterion.type', 'ad_group_criterion.criterion_id',
     'ad_group_criterion.keyword.text', 'ad_group_criterion.keyword.match_type'])

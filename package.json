@@ -1,6 +1,6 @@
 {
   "name": "js-gaql-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generating GAQL (Google Ads Query Language) tool.",
   "main": "lib/gaql.js",
   "scripts": {
@@ -29,7 +29,6 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
-    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.5",
